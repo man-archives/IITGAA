@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -60,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Log.e(TAG, "Email is null. Not subscribing to parse!");
         }
+
+        WebView webView=(WebView)findViewById(R.id.webview);
+        webView.loadUrl("http://mobile.dudamobile.com/site/iitgaa");
+
     }
 
     @Override
