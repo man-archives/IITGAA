@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         WebView webView=(WebView)findViewById(R.id.webview);
-        webView.loadUrl("http://mobile.dudamobile.com/site/iitgaa");
+        webView.loadUrl("http://iitgaa.org");
 
     }
 
