@@ -13,10 +13,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toast.makeText(getApplicationContext(), "Loading..\nPlease wait!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Loading...\nPlease wait!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Loading....\nPlease wait!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Loading.....\nPlease wait!", Toast.LENGTH_SHORT).show();
+
         listView = (ListView) findViewById(R.id.list_view);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -64,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
 
         WebView webView=(WebView)findViewById(R.id.webview);
         webView.loadUrl("http://iitgaa.org");
+        webView.setWebViewClient(new WebViewClient()); // Open all links inside the app itself!
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true); // enable JavaScript
 
     }
 

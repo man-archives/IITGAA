@@ -53,6 +53,8 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
 
+            Toast.makeText(getApplicationContext(), "Logging in..", Toast.LENGTH_SHORT).show();
+
             finish();
         } else {
             Toast.makeText(getApplicationContext(), "Please enter valid email address!", Toast.LENGTH_LONG).show();
