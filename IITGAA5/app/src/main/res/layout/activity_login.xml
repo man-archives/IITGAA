@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -17,9 +17,10 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/iitg_logo"
+            android:src="@drawable/iitgaa"
             android:adjustViewBounds="true"
-            android:maxWidth="142dp"
+            android:maxWidth="242dp"
+            android:layout_marginTop="20dp"
             android:maxHeight="142dp"
             android:scaleType="fitCenter"/>
 
@@ -31,25 +32,124 @@
             android:gravity="center_horizontal"
             android:text="IIT Guwahati\nAlumni Association"
             android:textColor="#1976D2"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
+
 
 
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             android:layout_marginTop="40dp"
             android:background="@android:color/white"
-            android:hint="Enter your email address"
+            android:hint="Name"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:inputType="textPersonName"
+            android:textColor="#1976D2"
+            android:textColorHint="#971976d2"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="#dedede"/>
+
+
+
+           <!-- <EditText
+                android:id="@+id/countryCode"
+                android:layout_width="60sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:background="@android:color/white"
+                android:layout_marginTop="4dp"
+                android:hint="+91"
+                android:gravity="center_horizontal"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="#1976D2"
+                android:textColorHint="#971976d2"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:background="#dedede"/> -->
+
+        <AutoCompleteTextView
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:background="@android:color/white"
+            android:layout_marginTop="4dp"
+            android:hint="Country"
+            android:gravity="center_horizontal"
+            android:inputType="textPersonName"
+            android:clickable="true"
+            android:padding="10dp"
+            android:textColor="#1976D2"
+            android:textColorHint="#971976d2"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="#dedede"/>
+
+        <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:background="@android:color/white"
+                android:layout_marginTop="4dp"
+                android:hint="Phone number"
+                android:gravity="center_horizontal"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textColor="#1976D2"
+                android:textColorHint="#971976d2"
+                android:textSize="18sp" />
+
+
+
+
+
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="#dedede"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="40dp"
+            android:background="@android:color/white"
+            android:hint="Email address"
             android:gravity="center_horizontal"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textColor="#1976D2"
             android:textColorHint="#971976d2"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
         <View
             android:layout_width="fill_parent"
@@ -71,4 +171,4 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+</ScrollView>

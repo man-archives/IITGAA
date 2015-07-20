@@ -40,13 +40,20 @@ public class ParseUtils {
         });
     }
 
-    public static void subscribeWithEmail(String email) {
+    public static void subscribeWithEmail(String email, String name, String phone, String country) {
         ParseInstallation installation = ParseInstallation.getCurrentInstallation();
 
         installation.put("email", email);
+        installation.put("name", name);
+        installation.put("phone", phone);
+        installation.put("country", country);
 
         installation.saveInBackground();
 
         Log.e(TAG, "Subscribed with email: " + email);
+        Log.e(TAG, "Subscribed with name: " + name);
+        Log.e(TAG, "Subscribed with phone: " + phone);
+        Log.e(TAG, "Subscribed with country: " + country);
+
     }
 }

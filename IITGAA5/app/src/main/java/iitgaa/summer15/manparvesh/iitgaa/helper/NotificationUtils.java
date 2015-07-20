@@ -42,7 +42,7 @@ public class NotificationUtils{
 
         if (isAppIsInBackground(mContext)) {
             // notification icon
-            int icon = R.mipmap.ic_launcher;
+            int icon = R.drawable.iitg_logo;
 
             int smallIcon = R.drawable.iitg_logo;
 

@@ -28,7 +28,7 @@
     <application
         android:name="iitgaa.summer15.manparvesh.iitgaa.app.MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/iitg_logo"
+        android:icon="@drawable/iitgaa"
         android:label="@string/app_name"
         android:theme="@style/MyMaterialTheme" >
         <activity

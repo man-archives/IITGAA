@@ -20,7 +20,7 @@ public class PrefManager {
     int PRIVATE_MODE = 0;
 
     // Shared pref file name
-    private static final String PREF_NAME = "AndroidHive";
+    private static final String PREF_NAME = "IITGAA";
 
     // All Shared Preferences Keys
     private static final String IS_LOGIN = "IsLoggedIn";
@@ -38,12 +38,15 @@ public class PrefManager {
     /**
      * Create login session
      */
-    public void createLoginSession(String email) {
+    public void createLoginSession(String email, String name, String phone, String country) {
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
         // Storing email in pref
-        editor.putString(KEY_EMAIL, email);
+        editor.putString("email", email);
+        editor.putString("name", name);
+        editor.putString("phone", phone);
+        editor.putString("country", country);
 
         // commit changes
         editor.commit();
@@ -51,6 +54,15 @@ public class PrefManager {
 
     public String getEmail() {
         return pref.getString(KEY_EMAIL, null);
+    }
+    public String getName() {
+        return pref.getString("name", null);
+    }
+    public String getPhone() {
+        return pref.getString("phone", null);
+    }
+    public String getCountry() {
+        return pref.getString("country", null);
     }
 
     public boolean isLoggedIn() {

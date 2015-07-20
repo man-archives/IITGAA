@@ -3,6 +3,7 @@ package iitgaa.summer15.manparvesh.iitgaa.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -38,11 +39,17 @@ public class MainActivity extends AppCompatActivity {
     private List<Message> listMessages = new ArrayList<>();
     private MessageAdapter adapter;
     private PrefManager pref;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //if using Lollipop or better version, use custom color for navigation bar
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.navigationBarColor));
+        }
 
         Toast.makeText(getApplicationContext(), "Loading..\nPlease wait!", Toast.LENGTH_SHORT).show();
         Toast.makeText(getApplicationContext(), "Loading...\nPlease wait!", Toast.LENGTH_SHORT).show();
@@ -65,17 +72,27 @@ public class MainActivity extends AppCompatActivity {
         String email = pref.getEmail();
 
         if (email != null) {
-            ParseUtils.subscribeWithEmail(pref.getEmail());
+            ParseUtils.subscribeWithEmail(pref.getEmail(), pref.getName(), pref.getPhone(), pref.getCountry());
         }else{
             Log.e(TAG, "Email is null. Not subscribing to parse!");
         }
 
-        WebView webView=(WebView)findViewById(R.id.webview);
+        webView=(WebView)findViewById(R.id.webview);
         webView.loadUrl("http://iitgaa.org");
         webView.setWebViewClient(new WebViewClient()); // Open all links inside the app itself!
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true); // enable JavaScript
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     @Override
